@@ -7,5 +7,5 @@
 1. `python manage.py loaddata example/fixtures/initial_data.json`
 1. `python runserver`
 
-`https://github.com/elo80ka/django-dynamic-formset`  
-`https://github.com/daxreyes/django-dynamic-formset`
+[1]: https://github.com/elo80ka/django-dynamic-formset     
+[2]: https://github.com/daxreyes/django-dynamic-formset
