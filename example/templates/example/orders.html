@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        <a href="{% url 'example:create' %}" class="btn btn-info">Create order</a>
+      </p>
+      <h1>Orders</h1>
+      {% for order in object_list %}
+        <ul class="list-group">
+          <a href="javascript:" class="list-group-item list-group-item-action flex-column align-items-start">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ order.customer }}</h5>
+              <small>{{ order.date }}</small>
+            </div>
+            <ul class="list-group list-group-flush">
+              {% for item in order.ordered_items.all %}
+                <li class="list-group-item">
+                  {{ item.product }} <span class="badge badge-primary badge-pill">{{ item.quantity }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </a>
+          <a href="{% url 'example:update' order.id %}" class="btn btn-secondary" role="button">Edit</a>
+        </ul>
+        <br>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
